@@ -23,7 +23,6 @@ export const SingleFileUploadWithProgress = ({ file, onDelete, onUpload }) => {
 
 const uploadFile = (file, onProgress) => {
   const url = 'http://192.168.56.10:3000/images';
-  const key = 'docs_upload_example_us_preset';
 
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -45,7 +44,6 @@ const uploadFile = (file, onProgress) => {
 
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', key);
     xhr.send(formData)
   })
 
